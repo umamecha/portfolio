@@ -1,0 +1,612 @@
+body{
+  margin:0;
+  background-color: white;
+  font-family:fot-cezanne-pron,sans-serif;
+  line-height: 1.3em;
+
+}
+/* タイトル画面 */
+.タイトルブロック {
+  position: relative;
+}
+.タイトルエリア {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.タイトルエリア .タイトル画像 {
+  width: 90%;
+  height: 100vh;
+  position: absolute;
+  x-index:-1;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+}
+.タイトルエリア .タイトル画像 img {
+  width: 100%;
+  height:100vh;
+  object-fit: cover;
+}
+.タイトル{
+  font-size: 70px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  font-size: 3em;
+  color:white;
+  left: 0;
+  right: 0;
+  margin: auto;
+  letter-spacing: 0.1em;
+  top: 50%;
+  transform: translateY(-50%);/*要素の大きさを50%戻す*/
+  x-index:2;
+  font-family: bilo,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+/* スクロールアイコン */
+.スクロールアイコン{
+  position: absolute;
+  bottom:5vh;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  color: #fff;
+}
+.スクロールアイコン　p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.スクロールアイコン span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  positon:absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom:0;
+  margin:auto;
+  width: 24px;
+  height: 24px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+
+/* プロフィール画面 */
+  /* 見出しの左右に線をつける */
+.見出し{
+  margin-top:100px;
+  margin-bottom:3vh;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  display: flex;
+  align-items: center; /* 垂直中心 */
+  justify-content: center; /* 水平中心 */
+  font-family: bilo,sans-serif;
+  font-weight: 500;
+}
+.見出し:before, .見出し:after {
+  border-top: 1px solid;
+  content: "";
+  width: 2.5em; /* 線の長さ */
+}
+.見出し:before {
+  margin-right: 1em; /* 文字の右隣 */
+}
+.見出し:after {
+  margin-left: 1em; /* 文字の左隣 */
+}
+
+.グリッド親2{
+  width:90%;
+  height:auto;
+  position: relative;
+  z-index:1;
+  background-color:#f9faf0;
+  padding:10vh 0;
+  padding-bottom:30vh;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0px 0px;
+   scroll-snap-align: start;
+}
+.グリッド2{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  width:95%;
+  height:auto;
+  justify-content: center;
+  gap:40px;
+  margin-top:20px;
+  margin:0 auto;
+}
+.プロフィール画像{
+  background-color: lightpink;
+  width:400px;
+  height:400px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 10px;
+}
+.プロフィール画像 img{
+  width:100%;
+  height:auto;
+  object-fit: cover;
+}
+.プロフィール{
+  margin:auto;
+  text-align: center;
+  width:400px;
+  margin:auto;
+}
+
+/* 吹き出し */
+.吹き出し親{
+  text-align: center;
+  margin-bottom:5vh;
+  animation: move-y .6s infinite alternate ease-in-out;
+}
+@keyframes move-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+.吹き出し {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 13px 13px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 2px #555;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.吹き出し:before {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-top: 12px solid #FFF;
+  z-index: 2;
+}
+.吹き出し:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid #555;
+  z-index: 1;
+}
+.吹き出し p {
+  margin: 0;
+  padding: 0;
+}
+
+/* 空白 */
+.空白{
+  padding-top:100px;
+}
+
+
+/* 作品グリッドCSS */
+.グリッド親{
+  width:80%;
+  height:auto;
+  position: relative;
+  z-index:1;
+  background:white;
+  padding:10vh 10%;
+  text-align: center;
+  top:0;
+  left: 0;
+}
+.グリッド{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width:100%;
+  height:auto;
+  justify-items: center;
+  gap:40px;
+  margin-bottom:20vh;
+}
+.タイトル2{
+  margin-top:10vh;
+  margin-bottom: 3vh;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.作品{
+  margin:20px 0px;
+}
+.画像{
+  background-color:lightpink;
+  width:300px;
+  height:230px;
+  border-radius: 8px;
+}
+.文章{
+  text-align:center;
+  margin-top:20px;
+  font-size: 0.8em;
+}
+.サブタイトル{
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* 画像ホバーアニメーション */
+.画像 {
+  overflow: hidden;
+  margin:0 auto;
+  display: flex;/*縦横中央揃えしたいときはこれ試そう*/
+  align-items: center;
+  justify-content: center;
+}
+.画像 img {
+  display: block;
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+  height:230px;
+  width:auto;
+}
+.画像 img:hover {
+  transform: scale(1);
+  transition-duration: 0.5s;
+}
+
+
+/* トップへ戻るアイコン*/
+#page-top {
+  display: flex;/*縦横中央揃えしたいときはこれ試そう*/
+  align-items: center;
+  justify-content: center;
+}
+#page-top a {
+  display: block;
+  opacity: 0.9;
+  transition: all .3s ease;
+}
+#page-top a:hover {
+  opacity: .5;
+}
+
+/* ホームに戻るボタン */
+.戻るボタン{
+  padding:30px;
+}
+
+/*作品ページ*/
+.グリッド3{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+  width:100%;
+  height:auto;
+  justify-items: center;
+  margin-bottom:20vh;
+  gap:30px;
+}
+.グリッド4{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width:70%;
+  height:auto;
+  justify-items: center;
+  margin:auto;
+  margin-bottom:20vh;
+  gap:30px;
+}
+.写真{
+  width:500px;
+  height:auto;
+  overflow: hidden;
+  margin:0 auto;
+  display: flex;/*縦横中央揃えしたいときはこれ試そう*/
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+.写真2{
+  width:300px;
+  height:auto;
+  overflow: hidden;
+  margin:0 auto;
+  display: flex;/*縦横中央揃えしたいときはこれ試そう*/
+  align-items: center;
+  justify-content: center;
+}
+.写真3{
+  width:500px;
+  height:auto;
+  overflow: hidden;
+  margin:0 auto;
+  display: flex;/*縦横中央揃えしたいときはこれ試そう*/
+  align-items: center;
+  justify-content: center;
+}
+.写真 img {
+  width:100%;
+  height:auto;
+}
+.写真2 img {
+  width:100%;
+  height:auto;
+}
+.写真3 img {
+  width:100%;
+  height:auto;
+}
+.グリッド親3{
+  width:100%;
+  height:auto;
+  position: relative;
+  z-index:1;
+  background-color:#a63e17;
+  padding:30vh 0 0 0;
+  padding-bottom:30vh;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0px 0px;
+}
+.グリッド親4{
+  width:100%;
+  height:auto;
+  position: relative;
+  z-index:1;
+  background-color:#559c7a;
+  padding:30vh 0 0 0;
+  padding-bottom:30vh;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0px 0px;
+}
+.グリッド親5{
+  width:100%;
+  height:auto;
+  position: relative;
+  z-index:1;
+  background-color:#c6a06f;
+  padding:30vh 0 0 0;
+  padding-bottom:30vh;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0px 0px;
+}
+.グリッド親6{
+  width:100%;
+  height:auto;
+  position: relative;
+  z-index:1;
+  background-color:#263665;
+  padding:30vh 0 0 0;
+  padding-bottom:30vh;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0px 0px;
+}
+.グリッド親7{
+  width:100%;
+  height:auto;
+  position: relative;
+  z-index:1;
+  background-color:#717171;
+  padding:30vh 0 0 0;
+  padding-bottom:30vh;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0px 0px;
+}
+.作品説明{
+  margin:10vh;
+  text-align: center;
+}
+a {
+  color:#717171;
+  text-decoration: none;
+}
+
+
+/* フッター */
+footer{
+  text-align: center;
+  margin-top:10vh;
+  margin-bottom:10vh;
+}
+
+/* ローディングCSS */
+.momentum箱{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  width:100%;
+  x-index:999;
+}
+.momentum {
+  --uib-size: 40px;
+  --uib-speed: 1.1s;
+  --uib-color: white;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  animation: rotate var(--uib-speed) linear infinite;
+  opacity:0.7;
+
+}
+.momentum::before,
+.momentum::after {
+  content: '';
+  height: 25%;
+  width: 25%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+}
+.momentum::before {
+  animation: wobble2 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
+}
+.momentum::after {
+  animation: wobble calc(var(--uib-speed) * 1.25) ease-in-out infinite;
+}
+.momentum::before {
+  margin-right: 10%;
+}
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(calc(var(--uib-size) * 0.2)) scale(1.1);
+  }
+}
+@keyframes wobble2 {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(calc(var(--uib-size) * -0.2)) scale(1.1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#loader-bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #f4cdcd;
+  z-index: 999;
+}
+#loader {
+}
+
+
+/* スマホ用プロフィール */
+@media(max-width:550px){
+  .プロフィール画像{
+    width:300px;
+    height:300px;
+  }
+  .プロフィール{
+    width:300px;
+  }
+  .吹き出し親{
+width:300px;
+margin: auto;
+  }
+  .タイトル{
+    font-size: 2em;
+}
+.写真{
+  width:300px;
+}
+.写真2{
+  width:200px;
+}
+.写真3{
+  width:300px;
+}
+.見出し{
+  font-size: 1.5em;
+}
+#page-top{
+  font-size: 1.5em;
+}
+.戻るボタン{
+  font-size:1.5em;
+}
+}
+
+@media(max-width:380px){
+  .プロフィール画像{
+    width:200px;
+    height:200px;
+  }
+  .プロフィール{
+    width:200px;
+  }
+  .吹き出し親{
+width:200px;
+margin: auto;
+  }
+  .画像{
+    width:200px;
+    height:150px;
+  }
+  .画像 img{
+    width:auto;
+    height:150px;
+  }
+  .グリッド{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
