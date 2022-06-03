@@ -112,7 +112,7 @@ body{
   /* 見出しの左右に線をつける */
 .見出し{
   margin-top:100px;
-  margin-bottom:3vh;
+  margin-bottom:7vh;
   text-align: center;
   font-weight: bold;
   font-size: 2em;
