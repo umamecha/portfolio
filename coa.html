@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scake=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>takagi'sportfolio</title>
+</head>
+<!-- javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- スクロールアニメーション -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://kit.fontawesome.com/5551de31e7.js" crossorigin="anonymous"></script>
+<!-- セザンヌフォント -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'shk3abh',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<body>
+
+
+<div id="wrap">
+<div id="luxy">
+
+<div class="戻るボタン"><a href="index.html"><i class="fa-solid fa-angle-left" style=" font-size:2em; color:#263665; "></i></a></div>
+<div class="空白"></div>
+<div class="作品説明">東京工科大学教師チャットアプリ<h2>COACHAT</h2>
+	<br>株式会社Goodpatch×東京工科大学プログラム<br>制作期間 : 二週間<br>グループ制作 :ディレクター兼UI/UXデザイン担当<br>ターゲット : 東京工科大学生徒<br><img src="assets/images/coa/coa8.png"></div>
+<div class="空白"></div>
+  <div class="グリッド親6">
+  <div class="グリッド3">
+  <div class="写真3"><img src="assets/images/coa/coa1.png" style="width:200px;"></div>
+  <div class="写真"><img src="assets/images/coa/coa2.png"></div>
+  </div>
+  <div class="グリッド4">
+  <div class="写真2"><img src="assets/images/coa/coa5.png"></div>
+  <div class="写真2"><img src="assets/images/coa/coa6.png"></div>
+  <div class="写真2"><img src="assets/images/coa/coa7.png"></div>
+  <div class="写真2"><img src="assets/images/coa/coa4.png"></div>
+  </div>
+  </div>
+
+
+
+<footer>&copy;COPYRIGHT 2022 TAKAGIHIKARU</footer>
+
+
+
+
+
+</div>
+</div>
+
+  <!-- ローディング画面 -->
+<div id="loader-bg">
+    <div id="loader">
+      <div class="momentum箱">
+      <div class="momentum"></div></div>
+    </div>
+  	</div>
+
+  <script>
+
+  // ローディング画面js
+$(function() {
+    var h = $(window).height();
+
+    $('#wrap').css('display','none');
+    $('#loader-bg ,#loader').height(h).css('display','block');
+  });
+  	$(window).load(function () { //全ての読み込みが完了したら実行
+    $('#loader-bg').delay(900).fadeOut(800);
+    $('#loader').delay(600).fadeOut(300);
+    $('#wrap').css('display', 'block');
+  });
+  	//10秒たったら強制的にロード画面を非表示
+$(function(){
+    setTimeout('stopload()',10000);
+  });
+  	function stopload(){
+    $('#wrap').css('display','block');
+    $('#loader-bg').delay(900).fadeOut(800);
+    $('#loader').delay(600).fadeOut(300);
+  }
+
+
+  //慣性スクロール//
+  luxy.init({});
+
+
+
+  </script>
+
+
+  </body>
+  </html>
