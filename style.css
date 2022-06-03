@@ -296,7 +296,7 @@ body{
 
 /* トップへ戻るアイコン*/
 #page-top {
-  position: fixed;
+  position: absolute;
   bottom:20vh;
   left:50%;
   transform: translateX(-50%);
