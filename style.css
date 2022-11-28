@@ -5,7 +5,9 @@ body{
   line-height: 1.3em;
 
 }
-
+#wrapper {
+  overflow: hidden;
+}
 body {
   min-height: 100vh;
   /* mobile viewport bug fix */
